@@ -1,3 +1,3 @@
 # Bicep-test
 
-Updated Bicep files
+Updated Bicep files v2
