@@ -1,0 +1,27 @@
+on: [push]
+name: Azure ARM
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@main
+
+      - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZ_CLIENT_SECRET }}
+
+    - name: deploy02 - Deploy vNet001
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        resourceGroupName: RG001
+        template: ./network01.bicep
+  
+    - name: deploy02-Peering vNets
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        resourceGroupName: RG001
+        template: ./peering.bicep
+        
