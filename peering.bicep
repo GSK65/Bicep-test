@@ -6,7 +6,7 @@ resource peer 'microsoft.network/virtualNetworks/virtualNetworkPeerings@2020-05-
     allowGatewayTransit: false
     useRemoteGateways: false
     remoteVirtualNetwork: {
-      id: resourceId('Bicep-RG001', 'Microsoft.Network/virtualNetworks', 'vnet002')
+      id: resourceId('RG001', 'Microsoft.Network/virtualNetworks', 'vnet002')
     }
   }
 }
@@ -19,7 +19,7 @@ resource peer02 'microsoft.network/virtualNetworks/virtualNetworkPeerings@2020-0
     allowGatewayTransit: false
     useRemoteGateways: false
     remoteVirtualNetwork: {
-      id: resourceId('Bicep-RG001', 'Microsoft.Network/virtualNetworks', 'vnet001')
+      id: resourceId('RG001', 'Microsoft.Network/virtualNetworks', 'vnet001')
     }
   }
 }
