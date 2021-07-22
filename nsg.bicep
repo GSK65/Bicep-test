@@ -3,6 +3,8 @@ resource nsg2 'Microsoft.Network/networkSecurityGroups@2020-06-01' = {
   location: 'westeurope'
     properties: {
        securityRules:  [
+         
        ]
     }
 }
+
