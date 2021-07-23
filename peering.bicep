@@ -1,5 +1,5 @@
-param vnet01name string = 'vnet01'
-param vnet02name string = 'vnet02'
+param vnet01name string = 'vnet001'
+param vnet02name string = 'vnet002'
 
 resource peer 'microsoft.network/virtualNetworks/virtualNetworkPeerings@2020-05-01'  = {
   name: '${vnet01name}/peering-to-vnet002'
