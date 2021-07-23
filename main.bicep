@@ -1,9 +1,5 @@
 module sa './storageacc.bicep' = {
   name: 'deploystorage'
-  params: {
-    storageaccountname: 'uniquestorage001test'
-  }
-  
 }
 
 module nw01 './Network01.bicep' = {
