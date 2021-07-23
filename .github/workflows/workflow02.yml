@@ -1,4 +1,4 @@
-name: Deploying Workflow02
+name: Deploying Feature branch
 on:
   push:
     branches:
