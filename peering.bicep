@@ -1,25 +1,29 @@
+param vnet01name string = 'vnet001'
+param vnet02name string = 'vnet002'
+
 resource peer 'microsoft.network/virtualNetworks/virtualNetworkPeerings@2020-05-01'  = {
-  name: 'vnet001/peering-to-vnet002'
+  name: '${vnet01name}/peering-to-vnet002'
   properties: {
     allowVirtualNetworkAccess: true
     allowForwardedTraffic: true
     allowGatewayTransit: false
     useRemoteGateways: false
     remoteVirtualNetwork: {
-      id: resourceId('RG001', 'Microsoft.Network/virtualNetworks', 'vnet002')
+      id: resourceId('RG001', 'Microsoft.Network/virtualNetworks', '${vnet02name}')
     }
   }
 }
 
-resource peer02 'microsoft.network/virtualNetworks/virtualNetworkPeerings@2020-05-01'  = {
-  name: 'vnet002/peering-to-vnet001'
+
+        resource peer02 'microsoft.network/virtualNetworks/virtualNetworkPeerings@2020-05-01'  = {
+  name: '${vnet02name}/peering-to-vnet001'
   properties: {
     allowVirtualNetworkAccess: true
     allowForwardedTraffic: true
     allowGatewayTransit: false
     useRemoteGateways: false
     remoteVirtualNetwork: {
-      id: resourceId('RG001', 'Microsoft.Network/virtualNetworks', 'vnet001')
+      id: resourceId('RG001', 'Microsoft.Network/virtualNetworks', '${vnet01name}')
     }
   }
 }
