@@ -1,6 +1,6 @@
 param location string = 'westeurope'
 param namePrefix string = 'stg'
-var storageaccountname = '${namePrefix}acct25663466test}'
+var storageaccountname = '${namePrefix}${uniqueString(resourceGroup().id)}'
 
 resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   name: storageaccountname
