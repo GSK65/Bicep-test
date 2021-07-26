@@ -6,7 +6,7 @@ name: Non-prod Workflow
 on: 
  push:
   paths:
-   - 'dev/**'
+   - 'non-prod/**'
 
 jobs:
  
