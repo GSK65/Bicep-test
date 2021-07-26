@@ -24,4 +24,4 @@ jobs:
           creds: ${{ secrets.AZ_CLIENT_SECRET }}
 
       - run: |
-          az deployment group create -f ./dev/main.bicep -g RG001
+          az deployment group create -f ./non-prod/main.bicep -g RG001
